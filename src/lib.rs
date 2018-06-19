@@ -12,10 +12,15 @@
 
 //! Hex binary-to-text encoding
 
+#![no_std]
+extern crate sgx_tstd as std;
+
 pub use self::FromHexError::*;
 
 use std::fmt;
 use std::error;
+use std::vec::Vec;
+use std::string::String;
 
 /// A trait for converting a value to hexadecimal encoding
 pub trait ToHex {
