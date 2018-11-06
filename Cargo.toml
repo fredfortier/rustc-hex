@@ -1,7 +1,7 @@
 [package]
 name = "rustc-hex"
-version = "1.0.0"
-authors = ["The Rust Project Developers", "debris <marek.kotewicz@gmail.com>"]
+version = "2.0.1"
+authors = ["The Rust Project Developers", "debris <marek.kotewicz@gmail.com>", "Robert Habermeier"]
 license = "MIT/Apache-2.0"
 repository = "https://github.com/debris/rustc-hex"
 homepage = "https://github.com/debris/rustc-hex"
@@ -12,6 +12,11 @@ rustc-serialize compatible hex conversion traits
 
 [target.'cfg(not(target_env = "sgx"))'.dependencies.sgx_tstd]
 git = "https://github.com/baidu/rust-sgx-sdk.git"
-rev = "v1.0.0"
+rev = "v1.0.4"
+optional = true
+
+[features]
+default = ["std"]
+std = ["sgx_tstd"]
 
 [dependencies]
