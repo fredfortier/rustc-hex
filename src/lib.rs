@@ -11,12 +11,14 @@
 //! Hex binary-to-text encoding
 
 #![no_std]
-extern crate sgx_tstd as std;
-
-pub use self::FromHexError::*;
 #![cfg_attr(not(feature = "std"), no_std)]
 
 #[cfg(feature = "std")]
+extern crate sgx_tstd as std;
+
+pub use self::FromHexError::*;
+
+#[cfg(not(feature = "std"))]
 extern crate core;
 
 #[cfg(feature = "std")]
